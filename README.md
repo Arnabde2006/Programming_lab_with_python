@@ -9,32 +9,32 @@ Solutions for the Python programming lab assignments, covering Python fundamenta
 
 | File | Topics Covered |
 |---|---|
-| [`Assignment 1.py`](./Assignment%201.py) | Hello World, user input, arithmetic operations, area/temperature calculations, type casting, averages, lists, tuples |
-| [`Assignment 2.py`](./Assignment%202.py) | String methods, f-strings, list & tuple methods (append, insert, remove, pop, sort, count, index), nested lists & tuples |
-| [`Assignment 3.py`](./Assignment%203.py) | Lists & tuples (max/min/sum/avg, indexing, set operations, rotation), nested lists, dictionaries (frequency counters, lookups, updates), grading logic with if-elif-else |
-| [`Assignment 4.py`](./Assignment%204.py) | Conditional logic (if-elif-else: billing slabs, ticket pricing, ATM checks, fine calculation, grading), `for` loops (attendance, savings tracker, counters, fruit/water/book lists), `while` loops (guessing game, PIN security), do-while simulation, nested loops (bank deposits), combined lists + dictionary + loops + if-else (shopping system with discounts) |
-| [`Assignment 5.py`](./Assignment%205.py) | Functions (no-argument, positional, keyword, default arguments, void vs fruitful, multiple return values), lambda functions, `map()`, `filter()`, `reduce()`, iterators (`iter()`/`next()`, custom `CountDown` iterator), generators (`yield`, generator + filtering) |
-| [`Assignment 6.py`](./Assignment%206.py) | Recursion (factorial, Fibonacci, sum of n, reverse number), closures (simple, power, counter), decorators (basic, execution timer, arguments), classes & objects, class vs instance attributes, private methods, constructors & destructors, inheritance (single, multilevel, multiple), overloading (default args, `__add__`), method overriding, abstract base classes, metaclasses |
-| [`Assignment 7.py`](./Assignment%207.py) | **Part A:** OOP (constructors, instance/class attributes, private members, inheritance types, overriding, operator overloading, ABC, polymorphism, metaclass). **Part B:** exception handling (`try-except-else-finally`, multiple exceptions, user-defined `InvalidAgeError`) and file handling (create/read/write, count lines-words-characters, copy files, file operations with exception handling) |
-| [`Assignment 8.py`](./Assignment%208.py) | **Part A:** `array` module (create, access, insert/delete, sort/reverse, search/count). **Part B:** NumPy (creation, indexing/slicing, arithmetic, statistics, reshaping, matrix operations, Boolean indexing, math functions, stack/split, NaN handling). **Part C:** Pandas (Series, DataFrame, filtering, sorting/ranking, missing data, `groupby`). **Part D:** Matplotlib (line, bar, subplots, combined Pandas + NumPy + Matplotlib visualization) |
-| [`Assignment 9.py`](./Assignment%209.py) | Data analytics on the UCI Automobile dataset: loading & exploration, missing values (`?` to NaN), price cleaning, frequency counts (make, body style, fuel type, drive wheels), group-wise average prices, histograms, scatter plots, correlation analysis, and a complete price analytics report with conclusion |
-| [`Assignment 10.py`](./Assignment%2010.py) | AI lab (menu-driven, Q1-Q10): Tic-Tac-Toe GUI with Minimax, 8-Puzzle GUI solver (BFS vs A*), BFS route finding, DFS maze solving, A* with Manhattan distance, Greedy Best-First Search vs BFS, propositional-logic knowledge base, semantic network (IS-A / HAS-A / CAN), PEAS description generator, and an intelligent grid navigation agent (BFS, DFS, Greedy, A*) with a Tkinter visualizer and algorithm comparison |
+| [`Assignment_1.py`](./Assignment_1.py) | Hello World, user input, arithmetic operations, area/temperature calculations, type casting, averages, lists, tuples |
+| [`Assignment_2.py`](./Assignment_2.py) | String methods, f-strings, list & tuple methods (append, insert, remove, pop, sort, count, index), nested lists & tuples |
+| [`Assignment_3.py`](./Assignment_3.py) | Lists & tuples (max/min/sum/avg, indexing, set operations, rotation), nested lists, dictionaries (frequency counters, lookups, updates), grading logic with if-elif-else |
+| [`Assignment_4.py`](./Assignment_4.py) | Conditional logic (if-elif-else: billing slabs, ticket pricing, ATM checks, fine calculation, grading), `for` loops (attendance, savings tracker, counters, fruit/water/book lists), `while` loops (guessing game, PIN security), do-while simulation, nested loops (bank deposits), combined lists + dictionary + loops + if-else (shopping system with discounts) |
+| [`Assignment_5.py`](./Assignment_5.py) | Functions (no-argument, positional, keyword, default arguments, void vs fruitful, multiple return values), lambda functions, `map()`, `filter()`, `reduce()`, iterators (`iter()`/`next()`, custom `CountDown` iterator), generators (`yield`, generator + filtering) |
+| [`Assignment_6.py`](./Assignment_6.py) | Recursion (factorial, Fibonacci, sum of n, reverse number), closures (simple, power, counter), decorators (basic, execution timer, arguments), classes & objects, class vs instance attributes, private methods, constructors & destructors, inheritance (single, multilevel, multiple), overloading (default args, `__add__`), method overriding, abstract base classes, metaclasses |
+| [`Assignment_7.py`](./Assignment_7.py) | **Part A:** OOP (constructors, instance/class attributes, private members, inheritance types, overriding, operator overloading, ABC, polymorphism, metaclass). **Part B:** exception handling (`try-except-else-finally`, multiple exceptions, user-defined `InvalidAgeError`) and file handling (create/read/write, count lines-words-characters, copy files, file operations with exception handling) |
+| [`Assignment_8.py`](./Assignment_8.py) | **Part A:** `array` module (create, access, insert/delete, sort/reverse, search/count). **Part B:** NumPy (creation, indexing/slicing, arithmetic, statistics, reshaping, matrix operations, Boolean indexing, math functions, stack/split, NaN handling). **Part C:** Pandas (Series, DataFrame, filtering, sorting/ranking, missing data, `groupby`). **Part D:** Matplotlib (line, bar, subplots, combined Pandas + NumPy + Matplotlib visualization) |
+| [`Assignment_9.py`](./Assignment_9.py) | Data analytics on the UCI Automobile dataset: loading & exploration, missing values (`?` to NaN), price cleaning, frequency counts (make, body style, fuel type, drive wheels), group-wise average prices, histograms, scatter plots, correlation analysis, and a complete price analytics report with conclusion |
+| [`Assignment_10.py`](./Assignment_10.py) | AI lab (menu-driven, Q1-Q10): Tic-Tac-Toe GUI with Minimax, 8-Puzzle GUI solver (BFS vs A*), BFS route finding, DFS maze solving, A* with Manhattan distance, Greedy Best-First Search vs BFS, propositional-logic knowledge base, semantic network (IS-A / HAS-A / CAN), PEAS description generator, and an intelligent grid navigation agent (BFS, DFS, Greedy, A*) with a Tkinter visualizer and algorithm comparison |
 
 ## How to Run
 
 Each file is self-contained. Run with:
 
 ```bash
-python "Assignment 1.py"
-python "Assignment 2.py"
-python "Assignment 3.py"
-python "Assignment 4.py"
-python "Assignment 5.py"
-python "Assignment 6.py"
-python "Assignment 7.py"
-python "Assignment 8.py"
-python "Assignment 9.py"
-python "Assignment 10.py"
+python Assignment_1.py
+python Assignment_2.py
+python Assignment_3.py
+python Assignment_4.py
+python Assignment_5.py
+python Assignment_6.py
+python Assignment_7.py
+python Assignment_8.py
+python Assignment_9.py
+python Assignment_10.py
 ```
 
 Programs that require input will prompt for it in the terminal.
