@@ -188,6 +188,8 @@ c.mother_skill()
 #9
 print("Q9 - Hierarchical Inheritance")
 
+import math
+
 class Shape:
     def display(self):
         print("This is a shape")
@@ -276,6 +278,7 @@ print("Three numbers (10,20,30):",calc.add(10,20,30))
 #13
 print("Q13 - Abstract Base Class (ABC)")
 
+import math
 from abc import ABC,abstractmethod
 
 class Shape(ABC):
@@ -313,6 +316,37 @@ print("Triangle:",Triangle(8,4).area())
 
 #14
 print("Q14 - Polymorphism")
+
+import math
+from abc import ABC,abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self,r):
+        self.r=r
+
+    def area(self):
+        return math.pi*self.r**2
+
+class Rectangle(Shape):
+    def __init__(self,l,w):
+        self.l=l
+        self.w=w
+
+    def area(self):
+        return self.l*self.w
+
+class Triangle(Shape):
+    def __init__(self,b,h):
+        self.b=b
+        self.h=h
+
+    def area(self):
+        return 0.5*self.b*self.h
 
 def show_area(shape):
     print(f"{type(shape).__name__} area = {shape.area():.2f}")
@@ -437,6 +471,11 @@ print("student.txt created successfully")
 #22
 print("Q22 - Read Data from a File")
 
+import os
+if not os.path.exists("student.txt"):
+    with open("student.txt","w") as f:
+        f.write("Student Name: Arnab\nRoll Number: 1\nCourse: BCA\nMarks: 85\n")
+
 print("Using read():")
 with open("student.txt","r") as f:
     print(f.read())
@@ -451,6 +490,11 @@ with open("student.txt","r") as f:
 
 #23
 print("\nQ23 - Count Lines, Words, and Characters")
+
+import os
+if not os.path.exists("student.txt"):
+    with open("student.txt","w") as f:
+        f.write("Student Name: Arnab\nRoll Number: 1\nCourse: BCA\nMarks: 85\n")
 
 lines=words=chars=0
 with open("student.txt","r") as f:
