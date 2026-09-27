@@ -9,6 +9,8 @@ import matplotlib.pyplot as plt
 #1
 print("Q1 - Create and Access an Array")
 
+import array as arr
+
 a=arr.array('i',[10,20,30,40,50,60,70,80,90,100])
 print("Array elements:",a.tolist())
 print("First element:",a[0])
@@ -18,6 +20,8 @@ print("Middle element:",a[len(a)//2])
 
 #2
 print("Q2 - Array Operations")
+
+import array as arr
 
 a=arr.array('i',[12,45,7,23,56,89,34,21,67,90])
 print("Array:",a.tolist())
@@ -30,6 +34,8 @@ print("Length:",len(a))
 
 #3
 print("Q3 - Insert and Delete Elements")
+
+import array as arr
 
 a=arr.array('i',range(1,11))
 print("Original:",a.tolist())
@@ -45,6 +51,9 @@ print("Updated array:",a.tolist())
 #4
 print("Q4 - Reverse and Sort an Array")
 
+import array as arr
+import random
+
 a=arr.array('i',[random.randint(1,100) for _ in range(10)])
 print("Original:",a.tolist())
 print("Ascending:",sorted(a))
@@ -55,6 +64,8 @@ print("Reversed:",a.tolist())
 
 #5
 print("Q5 - Search and Count Elements")
+
+import array as arr
 
 a=arr.array('i',[5,12,7,12,9,3,12,8])
 target=12
@@ -76,6 +87,8 @@ else:
 #6
 print("Q6 - Creating NumPy Arrays")
 
+import numpy as np
+
 one_d=np.array([1,2,3,4,5])
 two_d=np.array([[1,2,3],[4,5,6]])
 zeros=np.zeros((3,3))
@@ -88,6 +101,8 @@ for name,x in [("1-D",one_d),("2-D",two_d),("Zeros",zeros),("Ones",ones),("Range
 #7
 print("Q7 - Array Indexing and Slicing")
 
+import numpy as np
+
 a=np.arange(1,21)
 print("Array:",a)
 print("Positive indexing a[3]:",a[3])
@@ -99,6 +114,8 @@ print("Alternate elements:",a[::2])
 
 #8
 print("Q8 - NumPy Array Arithmetic")
+
+import numpy as np
 
 x=np.array([10,20,30,40,50])
 y=np.array([3,4,5,6,7])
@@ -115,6 +132,8 @@ print("Exponentiation:",x**y)
 #9
 print("Q9 - Statistical Operations Using NumPy")
 
+import numpy as np
+
 marks=np.array([78,85,92,67,74,88,95,59,81,70])
 print("Marks:",marks)
 print("Mean:",np.mean(marks))
@@ -128,6 +147,8 @@ print("Minimum marks:",np.min(marks))
 #10
 print("Q10 - Reshaping NumPy Arrays")
 
+import numpy as np
+
 a=np.arange(1,25)
 for r,c in [(2,12),(3,8),(4,6),(6,4)]:
     b=a.reshape(r,c)
@@ -136,6 +157,8 @@ for r,c in [(2,12),(3,8),(4,6),(6,4)]:
 
 #11
 print("Q11 - Matrix Operations")
+
+import numpy as np
 
 m1=np.array([[1,2,3],[4,5,6],[7,8,9]])
 m2=np.array([[9,8,7],[6,5,4],[3,2,1]])
@@ -152,6 +175,8 @@ print("Transpose of Matrix 2:\n",m2.T)
 #12
 print("Q12 - Finding Elements Using NumPy Conditions")
 
+import numpy as np
+
 a=np.array([12,45,67,23,88,54,31,90,15,62,77,40,29,51,66,8,99,34,57,21])
 print("Array:",a)
 print("Even numbers:",a[a%2==0])
@@ -162,6 +187,8 @@ print("Numbers between 20 and 60:",a[(a>=20)&(a<=60)])
 
 #13
 print("Q13 - NumPy Mathematical Functions")
+
+import numpy as np
 
 angles=np.array([0,30,45,60,90])
 rad=np.deg2rad(angles)
@@ -179,6 +206,8 @@ print("exp:",np.round(np.exp(np.array([1,2,3])),4))
 #14
 print("Q14 - Combining and Splitting Arrays")
 
+import numpy as np
+
 p=np.array([1,2,3])
 q=np.array([4,5,6])
 print("p:",p,"q:",q)
@@ -191,6 +220,8 @@ print("split into 3:",np.split(big,3))
 
 #15
 print("Q15 - Handling Missing and Invalid Values in NumPy")
+
+import numpy as np
 
 a=np.array([10,20,np.nan,40,np.nan,60])
 print("Array:",a)
@@ -207,6 +238,8 @@ print("After replacing NaN with mean:",a)
 #16
 print("Q16 - Creating a Pandas Series")
 
+import pandas as pd
+
 s=pd.Series([78,85,92,67,74,88,95,59,81,70])
 print("Series:\n",s)
 print("Index:",s.index)
@@ -219,6 +252,8 @@ print("Minimum:",s.min())
 
 #17
 print("Q17 - Creating and Accessing a DataFrame")
+
+import pandas as pd
 
 df=pd.DataFrame({
     "Roll Number":[101,102,103,104,105,106,107,108,109,110],
@@ -237,6 +272,16 @@ print("Record of a particular student (Roll 103):\n",df[df["Roll Number"]==103])
 #18
 print("Q18 - DataFrame Filtering")
 
+import pandas as pd
+
+df=pd.DataFrame({
+    "Roll Number":[101,102,103,104,105,106,107,108,109,110],
+    "Name":["Arnab","Rahul","Priya","Amit","Neha","Sourav","Ritika","Karan","Sneha","Vikram"],
+    "Department":["BCA","BCA","BBA","BCA","BBA","BCA","BBA","BCA","BBA","BCA"],
+    "Marks":[85,72,90,64,78,55,88,69,81,93],
+    "Attendance":[92,78,85,70,88,65,95,74,82,90]
+})
+
 print("Marks > 75:\n",df[df["Marks"]>75])
 print("Attendance > 80%:\n",df[df["Attendance"]>80])
 print("Marks > 60 and Attendance > 75%:\n",df[(df["Marks"]>60)&(df["Attendance"]>75)])
@@ -245,6 +290,8 @@ print("Department BCA:\n",df[df["Department"]=="BCA"])
 
 #19
 print("Q19 - Sorting and Ranking Data")
+
+import pandas as pd
 
 emp=pd.DataFrame({
     "Employee ID":[1,2,3,4,5,6],
@@ -262,6 +309,9 @@ print("Ranking by salary:\n",emp.sort_values("Rank"))
 
 #20
 print("Q20 - Handling Missing Data in Pandas")
+
+import numpy as np
+import pandas as pd
 
 sd=pd.DataFrame({
     "Name":["Arnab","Rahul","Priya","Amit","Neha","Sourav"],
@@ -282,6 +332,8 @@ print("After replacing numeric missing values with column mean:\n",filled)
 #21
 print("Q21 - Grouping and Aggregation")
 
+import pandas as pd
+
 e=pd.DataFrame({
     "Department":["IT","HR","IT","Finance","HR","Finance","IT"],
     "Employee Name":["Amit","Neha","Rahul","Priya","Karan","Sneha","Arnab"],
@@ -300,6 +352,8 @@ print("Number of employees:\n",e.groupby("Department")["Employee Name"].count())
 #22
 print("Q22 - Line Plot")
 
+import matplotlib.pyplot as plt
+
 months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
 sales=[25000,27000,30000,28000,32000,35000,38000,36000,40000,42000,45000,50000]
 plt.figure(figsize=(9,5))
@@ -313,6 +367,9 @@ plt.show()
 
 #23
 print("Q23 - Bar Chart")
+
+import numpy as np
+import matplotlib.pyplot as plt
 
 students=["Arnab","Rahul","Priya","Amit","Neha"]
 subjects=["Maths","Physics","Chemistry","English","CS"]
@@ -334,6 +391,9 @@ plt.show()
 
 #24
 print("Q24 - Multiple Plots and Subplots")
+
+import matplotlib.pyplot as plt
+months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
 
 temp=[15,18,23,28,33,36,32,31,30,27,21,16]
 fig,ax=plt.subplots(1,3,figsize=(16,5))
@@ -357,6 +417,10 @@ plt.show()
 
 #25
 print("Q25 - Pandas + NumPy + Matplotlib Data Visualization")
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
 
 data=pd.DataFrame({
     "Student Name":["Arnab","Rahul","Priya","Amit","Neha","Sourav","Ritika","Karan","Sneha","Vikram"],
