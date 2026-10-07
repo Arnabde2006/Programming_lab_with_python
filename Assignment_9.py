@@ -1,19 +1,17 @@
+# Dataset: UCI Automobile dataset -> imports-85.data (keep it in the same folder as this file)
+# https://archive.ics.uci.edu/dataset/10/automobile
+
+#1
+print("Q1 - Loading and Exploring the Dataset")
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-
-# Dataset: UCI Automobile dataset -> imports-85.data (keep it in the same folder as this file)
-# https://archive.ics.uci.edu/dataset/10/automobile
 
 cols=["symboling","normalized-losses","make","fuel-type","aspiration","num-of-doors","body-style",
       "drive-wheels","engine-location","wheel-base","length","width","height","curb-weight",
       "engine-type","num-of-cylinders","engine-size","fuel-system","bore","stroke",
       "compression-ratio","horsepower","peak-rpm","city-mpg","highway-mpg","price"]
-
-
-#1
-print("Q1 - Loading and Exploring the Dataset")
-
 try:
     df=pd.read_csv("imports-85.data",header=None,names=cols)
 except FileNotFoundError:
@@ -29,12 +27,40 @@ print("Data types:\n",df.dtypes)
 #2
 print("Q2 - Dataset Information and Summary Statistics")
 
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+cols=["symboling","normalized-losses","make","fuel-type","aspiration","num-of-doors","body-style",
+      "drive-wheels","engine-location","wheel-base","length","width","height","curb-weight",
+      "engine-type","num-of-cylinders","engine-size","fuel-system","bore","stroke",
+      "compression-ratio","horsepower","peak-rpm","city-mpg","highway-mpg","price"]
+try:
+    df=pd.read_csv("imports-85.data",header=None,names=cols)
+except FileNotFoundError:
+    df=pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data",header=None,names=cols)
+
+
 df.info()
 print("Descriptive statistics (numerical columns):\n",df.describe())
 
 
 #3
 print("Q3 - Handling Missing Values")
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+cols=["symboling","normalized-losses","make","fuel-type","aspiration","num-of-doors","body-style",
+      "drive-wheels","engine-location","wheel-base","length","width","height","curb-weight",
+      "engine-type","num-of-cylinders","engine-size","fuel-system","bore","stroke",
+      "compression-ratio","horsepower","peak-rpm","city-mpg","highway-mpg","price"]
+try:
+    df=pd.read_csv("imports-85.data",header=None,names=cols)
+except FileNotFoundError:
+    df=pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data",header=None,names=cols)
+
 
 df=df.replace("?",np.nan)
 print("Missing values in each column:\n",df.isnull().sum())
@@ -44,6 +70,21 @@ print("Total missing values in dataset:",df.isnull().sum().sum())
 
 #4
 print("Q4 - Cleaning the Price Column")
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+cols=["symboling","normalized-losses","make","fuel-type","aspiration","num-of-doors","body-style",
+      "drive-wheels","engine-location","wheel-base","length","width","height","curb-weight",
+      "engine-type","num-of-cylinders","engine-size","fuel-system","bore","stroke",
+      "compression-ratio","horsepower","peak-rpm","city-mpg","highway-mpg","price"]
+try:
+    df=pd.read_csv("imports-85.data",header=None,names=cols)
+except FileNotFoundError:
+    df=pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data",header=None,names=cols)
+df=df.replace("?",np.nan)
+
 
 df["price"]=pd.to_numeric(df["price"],errors="coerce")
 print("Missing prices:",df["price"].isnull().sum())
@@ -57,6 +98,23 @@ print("Median car price:",df["price"].median())
 #5
 print("Q5 - Frequency of Car Makes")
 
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+cols=["symboling","normalized-losses","make","fuel-type","aspiration","num-of-doors","body-style",
+      "drive-wheels","engine-location","wheel-base","length","width","height","curb-weight",
+      "engine-type","num-of-cylinders","engine-size","fuel-system","bore","stroke",
+      "compression-ratio","horsepower","peak-rpm","city-mpg","highway-mpg","price"]
+try:
+    df=pd.read_csv("imports-85.data",header=None,names=cols)
+except FileNotFoundError:
+    df=pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data",header=None,names=cols)
+df=df.replace("?",np.nan)
+df["price"]=pd.to_numeric(df["price"],errors="coerce")
+df=df.dropna(subset=["price"])
+
+
 make_counts=df["make"].value_counts()
 print("Cars per make:\n",make_counts)
 print("Top 10 car manufacturers:\n",make_counts.head(10))
@@ -65,11 +123,45 @@ print("Top 10 car manufacturers:\n",make_counts.head(10))
 #6
 print("Q6 - Body Style Analysis")
 
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+cols=["symboling","normalized-losses","make","fuel-type","aspiration","num-of-doors","body-style",
+      "drive-wheels","engine-location","wheel-base","length","width","height","curb-weight",
+      "engine-type","num-of-cylinders","engine-size","fuel-system","bore","stroke",
+      "compression-ratio","horsepower","peak-rpm","city-mpg","highway-mpg","price"]
+try:
+    df=pd.read_csv("imports-85.data",header=None,names=cols)
+except FileNotFoundError:
+    df=pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data",header=None,names=cols)
+df=df.replace("?",np.nan)
+df["price"]=pd.to_numeric(df["price"],errors="coerce")
+df=df.dropna(subset=["price"])
+
+
 print(df["body-style"].value_counts().sort_values(ascending=False))
 
 
 #7
 print("Q7 - Fuel Type Analysis")
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+cols=["symboling","normalized-losses","make","fuel-type","aspiration","num-of-doors","body-style",
+      "drive-wheels","engine-location","wheel-base","length","width","height","curb-weight",
+      "engine-type","num-of-cylinders","engine-size","fuel-system","bore","stroke",
+      "compression-ratio","horsepower","peak-rpm","city-mpg","highway-mpg","price"]
+try:
+    df=pd.read_csv("imports-85.data",header=None,names=cols)
+except FileNotFoundError:
+    df=pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data",header=None,names=cols)
+df=df.replace("?",np.nan)
+df["price"]=pd.to_numeric(df["price"],errors="coerce")
+df=df.dropna(subset=["price"])
+
 
 fuel_counts=df["fuel-type"].value_counts()
 fuel_pct=(fuel_counts/fuel_counts.sum()*100).round(2)
@@ -87,6 +179,23 @@ plt.show()
 #8
 print("Q8 - Car Price Distribution")
 
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+cols=["symboling","normalized-losses","make","fuel-type","aspiration","num-of-doors","body-style",
+      "drive-wheels","engine-location","wheel-base","length","width","height","curb-weight",
+      "engine-type","num-of-cylinders","engine-size","fuel-system","bore","stroke",
+      "compression-ratio","horsepower","peak-rpm","city-mpg","highway-mpg","price"]
+try:
+    df=pd.read_csv("imports-85.data",header=None,names=cols)
+except FileNotFoundError:
+    df=pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data",header=None,names=cols)
+df=df.replace("?",np.nan)
+df["price"]=pd.to_numeric(df["price"],errors="coerce")
+df=df.dropna(subset=["price"])
+
+
 print(df["price"].describe())
 plt.figure(figsize=(8,5))
 plt.hist(df["price"],bins=20,color="teal",edgecolor="black")
@@ -100,6 +209,23 @@ plt.show()
 #9
 print("Q9 - Average Price by Car Make")
 
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+cols=["symboling","normalized-losses","make","fuel-type","aspiration","num-of-doors","body-style",
+      "drive-wheels","engine-location","wheel-base","length","width","height","curb-weight",
+      "engine-type","num-of-cylinders","engine-size","fuel-system","bore","stroke",
+      "compression-ratio","horsepower","peak-rpm","city-mpg","highway-mpg","price"]
+try:
+    df=pd.read_csv("imports-85.data",header=None,names=cols)
+except FileNotFoundError:
+    df=pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data",header=None,names=cols)
+df=df.replace("?",np.nan)
+df["price"]=pd.to_numeric(df["price"],errors="coerce")
+df=df.dropna(subset=["price"])
+
+
 avg_make=df.groupby("make")["price"].mean().sort_values(ascending=False)
 print("Average price by make (descending):\n",avg_make.round(2))
 print("Five most expensive manufacturers:\n",avg_make.head(5).round(2))
@@ -107,6 +233,23 @@ print("Five most expensive manufacturers:\n",avg_make.head(5).round(2))
 
 #10
 print("Q10 - Average Price by Body Style")
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+cols=["symboling","normalized-losses","make","fuel-type","aspiration","num-of-doors","body-style",
+      "drive-wheels","engine-location","wheel-base","length","width","height","curb-weight",
+      "engine-type","num-of-cylinders","engine-size","fuel-system","bore","stroke",
+      "compression-ratio","horsepower","peak-rpm","city-mpg","highway-mpg","price"]
+try:
+    df=pd.read_csv("imports-85.data",header=None,names=cols)
+except FileNotFoundError:
+    df=pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data",header=None,names=cols)
+df=df.replace("?",np.nan)
+df["price"]=pd.to_numeric(df["price"],errors="coerce")
+df=df.dropna(subset=["price"])
+
 
 avg_body=df.groupby("body-style")["price"].mean().sort_values(ascending=False)
 print(avg_body.round(2))
@@ -121,6 +264,23 @@ plt.show()
 
 #11
 print("Q11 - Horsepower Analysis")
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+cols=["symboling","normalized-losses","make","fuel-type","aspiration","num-of-doors","body-style",
+      "drive-wheels","engine-location","wheel-base","length","width","height","curb-weight",
+      "engine-type","num-of-cylinders","engine-size","fuel-system","bore","stroke",
+      "compression-ratio","horsepower","peak-rpm","city-mpg","highway-mpg","price"]
+try:
+    df=pd.read_csv("imports-85.data",header=None,names=cols)
+except FileNotFoundError:
+    df=pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data",header=None,names=cols)
+df=df.replace("?",np.nan)
+df["price"]=pd.to_numeric(df["price"],errors="coerce")
+df=df.dropna(subset=["price"])
+
 
 df["horsepower"]=pd.to_numeric(df["horsepower"],errors="coerce")
 hp=df["horsepower"]
@@ -141,6 +301,23 @@ plt.show()
 #12
 print("Q12 - Engine Size Analysis")
 
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+cols=["symboling","normalized-losses","make","fuel-type","aspiration","num-of-doors","body-style",
+      "drive-wheels","engine-location","wheel-base","length","width","height","curb-weight",
+      "engine-type","num-of-cylinders","engine-size","fuel-system","bore","stroke",
+      "compression-ratio","horsepower","peak-rpm","city-mpg","highway-mpg","price"]
+try:
+    df=pd.read_csv("imports-85.data",header=None,names=cols)
+except FileNotFoundError:
+    df=pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data",header=None,names=cols)
+df=df.replace("?",np.nan)
+df["price"]=pd.to_numeric(df["price"],errors="coerce")
+df=df.dropna(subset=["price"])
+
+
 es=df["engine-size"]
 print("Minimum engine size:",es.min())
 print("Maximum engine size:",es.max())
@@ -158,6 +335,24 @@ plt.show()
 #13
 print("Q13 - Horsepower vs Price")
 
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+cols=["symboling","normalized-losses","make","fuel-type","aspiration","num-of-doors","body-style",
+      "drive-wheels","engine-location","wheel-base","length","width","height","curb-weight",
+      "engine-type","num-of-cylinders","engine-size","fuel-system","bore","stroke",
+      "compression-ratio","horsepower","peak-rpm","city-mpg","highway-mpg","price"]
+try:
+    df=pd.read_csv("imports-85.data",header=None,names=cols)
+except FileNotFoundError:
+    df=pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data",header=None,names=cols)
+df=df.replace("?",np.nan)
+df["price"]=pd.to_numeric(df["price"],errors="coerce")
+df=df.dropna(subset=["price"])
+df["horsepower"]=pd.to_numeric(df["horsepower"],errors="coerce")
+
+
 plt.figure(figsize=(8,5))
 plt.scatter(df["horsepower"],df["price"],color="blue",alpha=0.6)
 plt.title("Horsepower vs Price")
@@ -173,6 +368,23 @@ print("Comment: there is a strong positive relationship - cars with more horsepo
 #14
 print("Q14 - Engine Size vs Price")
 
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+cols=["symboling","normalized-losses","make","fuel-type","aspiration","num-of-doors","body-style",
+      "drive-wheels","engine-location","wheel-base","length","width","height","curb-weight",
+      "engine-type","num-of-cylinders","engine-size","fuel-system","bore","stroke",
+      "compression-ratio","horsepower","peak-rpm","city-mpg","highway-mpg","price"]
+try:
+    df=pd.read_csv("imports-85.data",header=None,names=cols)
+except FileNotFoundError:
+    df=pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data",header=None,names=cols)
+df=df.replace("?",np.nan)
+df["price"]=pd.to_numeric(df["price"],errors="coerce")
+df=df.dropna(subset=["price"])
+
+
 plt.figure(figsize=(8,5))
 plt.scatter(df["engine-size"],df["price"],color="red",alpha=0.6)
 plt.title("Engine Size vs Price")
@@ -186,6 +398,23 @@ print("Correlation between engine size and price:",round(df["engine-size"].corr(
 #15
 print("Q15 - Curb Weight vs Price")
 
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+cols=["symboling","normalized-losses","make","fuel-type","aspiration","num-of-doors","body-style",
+      "drive-wheels","engine-location","wheel-base","length","width","height","curb-weight",
+      "engine-type","num-of-cylinders","engine-size","fuel-system","bore","stroke",
+      "compression-ratio","horsepower","peak-rpm","city-mpg","highway-mpg","price"]
+try:
+    df=pd.read_csv("imports-85.data",header=None,names=cols)
+except FileNotFoundError:
+    df=pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data",header=None,names=cols)
+df=df.replace("?",np.nan)
+df["price"]=pd.to_numeric(df["price"],errors="coerce")
+df=df.dropna(subset=["price"])
+
+
 plt.figure(figsize=(8,5))
 plt.scatter(df["curb-weight"],df["price"],color="brown",alpha=0.6)
 plt.title("Curb Weight vs Price")
@@ -198,6 +427,23 @@ print("Correlation between curb weight and price:",round(df["curb-weight"].corr(
 
 #16
 print("Q16 - Highway MPG Analysis")
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+cols=["symboling","normalized-losses","make","fuel-type","aspiration","num-of-doors","body-style",
+      "drive-wheels","engine-location","wheel-base","length","width","height","curb-weight",
+      "engine-type","num-of-cylinders","engine-size","fuel-system","bore","stroke",
+      "compression-ratio","horsepower","peak-rpm","city-mpg","highway-mpg","price"]
+try:
+    df=pd.read_csv("imports-85.data",header=None,names=cols)
+except FileNotFoundError:
+    df=pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data",header=None,names=cols)
+df=df.replace("?",np.nan)
+df["price"]=pd.to_numeric(df["price"],errors="coerce")
+df=df.dropna(subset=["price"])
+
 
 h=df["highway-mpg"]
 print("Minimum:",h.min())
@@ -215,6 +461,23 @@ plt.show()
 
 #17
 print("Q17 - City MPG vs Highway MPG")
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+cols=["symboling","normalized-losses","make","fuel-type","aspiration","num-of-doors","body-style",
+      "drive-wheels","engine-location","wheel-base","length","width","height","curb-weight",
+      "engine-type","num-of-cylinders","engine-size","fuel-system","bore","stroke",
+      "compression-ratio","horsepower","peak-rpm","city-mpg","highway-mpg","price"]
+try:
+    df=pd.read_csv("imports-85.data",header=None,names=cols)
+except FileNotFoundError:
+    df=pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data",header=None,names=cols)
+df=df.replace("?",np.nan)
+df["price"]=pd.to_numeric(df["price"],errors="coerce")
+df=df.dropna(subset=["price"])
+
 
 plt.figure(figsize=(8,5))
 plt.scatter(df["city-mpg"],df["highway-mpg"],color="darkgreen",alpha=0.6)
@@ -234,6 +497,23 @@ else:
 #18
 print("Q18 - Number of Doors by Body Style")
 
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+cols=["symboling","normalized-losses","make","fuel-type","aspiration","num-of-doors","body-style",
+      "drive-wheels","engine-location","wheel-base","length","width","height","curb-weight",
+      "engine-type","num-of-cylinders","engine-size","fuel-system","bore","stroke",
+      "compression-ratio","horsepower","peak-rpm","city-mpg","highway-mpg","price"]
+try:
+    df=pd.read_csv("imports-85.data",header=None,names=cols)
+except FileNotFoundError:
+    df=pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data",header=None,names=cols)
+df=df.replace("?",np.nan)
+df["price"]=pd.to_numeric(df["price"],errors="coerce")
+df=df.dropna(subset=["price"])
+
+
 door_table=pd.crosstab(df["body-style"],df["num-of-doors"])
 print(door_table)
 door_table.plot(kind="bar",figsize=(8,5))
@@ -248,6 +528,23 @@ plt.show()
 #19
 print("Q19 - Fuel Type and Average Price")
 
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+cols=["symboling","normalized-losses","make","fuel-type","aspiration","num-of-doors","body-style",
+      "drive-wheels","engine-location","wheel-base","length","width","height","curb-weight",
+      "engine-type","num-of-cylinders","engine-size","fuel-system","bore","stroke",
+      "compression-ratio","horsepower","peak-rpm","city-mpg","highway-mpg","price"]
+try:
+    df=pd.read_csv("imports-85.data",header=None,names=cols)
+except FileNotFoundError:
+    df=pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data",header=None,names=cols)
+df=df.replace("?",np.nan)
+df["price"]=pd.to_numeric(df["price"],errors="coerce")
+df=df.dropna(subset=["price"])
+
+
 avg_fuel=df.groupby("fuel-type")["price"].mean()
 print(avg_fuel.round(2))
 plt.figure(figsize=(6,4))
@@ -261,6 +558,23 @@ plt.show()
 
 #20
 print("Q20 - Drive Wheel Analysis")
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+cols=["symboling","normalized-losses","make","fuel-type","aspiration","num-of-doors","body-style",
+      "drive-wheels","engine-location","wheel-base","length","width","height","curb-weight",
+      "engine-type","num-of-cylinders","engine-size","fuel-system","bore","stroke",
+      "compression-ratio","horsepower","peak-rpm","city-mpg","highway-mpg","price"]
+try:
+    df=pd.read_csv("imports-85.data",header=None,names=cols)
+except FileNotFoundError:
+    df=pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data",header=None,names=cols)
+df=df.replace("?",np.nan)
+df["price"]=pd.to_numeric(df["price"],errors="coerce")
+df=df.dropna(subset=["price"])
+
 
 dw=df["drive-wheels"].value_counts()
 print("Front-wheel drive (fwd):",dw.get("fwd",0))
@@ -278,6 +592,23 @@ plt.show()
 #21
 print("Q21 - Price Comparison by Drive Wheels")
 
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+cols=["symboling","normalized-losses","make","fuel-type","aspiration","num-of-doors","body-style",
+      "drive-wheels","engine-location","wheel-base","length","width","height","curb-weight",
+      "engine-type","num-of-cylinders","engine-size","fuel-system","bore","stroke",
+      "compression-ratio","horsepower","peak-rpm","city-mpg","highway-mpg","price"]
+try:
+    df=pd.read_csv("imports-85.data",header=None,names=cols)
+except FileNotFoundError:
+    df=pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data",header=None,names=cols)
+df=df.replace("?",np.nan)
+df["price"]=pd.to_numeric(df["price"],errors="coerce")
+df=df.dropna(subset=["price"])
+
+
 avg_dw=df.groupby("drive-wheels")["price"].mean()
 print(avg_dw.round(2))
 plt.figure(figsize=(6,4))
@@ -292,6 +623,24 @@ plt.show()
 #22
 print("Q22 - Correlation Analysis of Numerical Variables")
 
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+cols=["symboling","normalized-losses","make","fuel-type","aspiration","num-of-doors","body-style",
+      "drive-wheels","engine-location","wheel-base","length","width","height","curb-weight",
+      "engine-type","num-of-cylinders","engine-size","fuel-system","bore","stroke",
+      "compression-ratio","horsepower","peak-rpm","city-mpg","highway-mpg","price"]
+try:
+    df=pd.read_csv("imports-85.data",header=None,names=cols)
+except FileNotFoundError:
+    df=pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data",header=None,names=cols)
+df=df.replace("?",np.nan)
+df["price"]=pd.to_numeric(df["price"],errors="coerce")
+df=df.dropna(subset=["price"])
+df["horsepower"]=pd.to_numeric(df["horsepower"],errors="coerce")
+
+
 num_cols=["price","engine-size","horsepower","curb-weight","city-mpg","highway-mpg"]
 corr=df[num_cols].corr()
 print("Correlation matrix:\n",corr.round(3))
@@ -302,6 +651,27 @@ print("Most strongly negatively correlated with price:",price_corr.idxmin(),roun
 
 #23
 print("Q23 - Basic Car Price Analytics Report")
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+cols=["symboling","normalized-losses","make","fuel-type","aspiration","num-of-doors","body-style",
+      "drive-wheels","engine-location","wheel-base","length","width","height","curb-weight",
+      "engine-type","num-of-cylinders","engine-size","fuel-system","bore","stroke",
+      "compression-ratio","horsepower","peak-rpm","city-mpg","highway-mpg","price"]
+try:
+    df=pd.read_csv("imports-85.data",header=None,names=cols)
+except FileNotFoundError:
+    df=pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data",header=None,names=cols)
+df=df.replace("?",np.nan)
+df["price"]=pd.to_numeric(df["price"],errors="coerce")
+df=df.dropna(subset=["price"])
+df["horsepower"]=pd.to_numeric(df["horsepower"],errors="coerce")
+
+
+num_cols=["price","engine-size","horsepower","curb-weight","city-mpg","highway-mpg"]
+price_corr=df[num_cols].corr()["price"].drop("price")
 
 print("\n1. Dataset dimensions:",df.shape)
 df.info()
